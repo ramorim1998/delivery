@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'home'},
   {path:'home',component: MenuComponent},
+  {path:'filter/:cuisine',component: MenuComponent},
+
 ];
 
 @NgModule({

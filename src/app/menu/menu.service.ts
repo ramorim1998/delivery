@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Food } from './models/food';
-import {tap} from 'rxjs/operators';
+import {tap, delay, take} from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,9 +9,14 @@ import { environment } from 'src/environments/environment';
 })
 export class MenuService {
   private readonly API = `${environment.API}/food`;
+  private readonly APIBAG = `${environment.API}/bag`;
   constructor(private http: HttpClient) { }
 
   listAll(){
-    return this.http.get<Food[]>(this.API).pipe(tap(console.log));
+    return this.http.get<Food[]>(this.API).pipe(delay(2000),tap(console.log));
+  }
+
+  addToBag(food: Food){
+    return this.http.post<Food[]>(this.APIBAG,food).pipe(take(1));
   }
 }
