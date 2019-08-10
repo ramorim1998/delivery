@@ -16,7 +16,7 @@
 
 </nav>
 <!--card of foods-->
-<div>
+<div *ngFor="let food of foods">
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
             <div class="col-md-4">
@@ -24,10 +24,10 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                        <button class="btn btn-primary float-right">add to bag</button>
+                    <h5 class="card-title">{{food.title}}</h5>
+                    <p class="card-text">{{food.cuisine}}</p>
+                    <p class="card-text">{{food.price}}</p>
+                    <button class="btn btn-primary float-right">add to bag</button>
                     </div>
             </div>
         </div>
