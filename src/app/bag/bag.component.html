@@ -1,0 +1,24 @@
+<!--BACK TO MENU PAG -->
+<nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link" routerLink="" routerLinkActive="active">CONTINUE BUYING</a>
+</nav>
+<!--div bag components-->
+<div *ngIf="bag$ | async as bag; else loading">
+    <div class="card mb-3" style="max-width: 540px;"*ngFor="let food of bag">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{food.title}}</h5>
+                    <p class="card-text">{{food.cuisine}}</p>
+                    <p class="card-text">{{food.price}}</p>
+                    <button class="btn btn-primary float-right" (click)="addToBag(food)">add to bag</button>
+                    </div>
+            </div>
+        </div> 
+    </div>
+  
+    
+</div>

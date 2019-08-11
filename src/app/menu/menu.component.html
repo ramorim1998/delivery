@@ -1,23 +1,22 @@
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="filtered" name="search">
     </form>
 </nav>
 <!--nav components-->
 <nav class="nav nav-pills flex-column flex-sm-row">
     <a class="flex-sm-fill text-sm-center nav-link" routerLink="" routerLinkActive="active">ALL</a>
-    <a class="flex-sm-fill text-sm-center nav-link" (click)='filtered(chinese)'>CHINESE</a>
-    <a class="flex-sm-fill text-sm-center nav-link" (click)='filtered(burger)'>BURGERS</a>
-    <a class="flex-sm-fill text-sm-center nav-link" (click)='filtered(salad)'>SALAD</a>
-    <a class="flex-sm-fill text-sm-center nav-link" (click)='filtered(cake)'>CAKE</a>
-    <a class="flex-sm-fill text-sm-center nav-link" (click)='filtered(pizza)'>PIZZA</a>
-    <a class="flex-sm-fill text-sm-center nav-link" >BAG</a>
+    <input class="btn btn-secundary" type="button" >
+    <a class="flex-sm-fill text-sm-center nav-link" (click)='filter(burger)'>BURGERS</a>
+    <a class="flex-sm-fill text-sm-center nav-link" (click)='filter(salad)'>SALAD</a>
+    <a class="flex-sm-fill text-sm-center nav-link" (click)='filter(cake)'>CAKE</a>
+    <a class="flex-sm-fill text-sm-center nav-link" (click)='filter(pizza)'>PIZZA</a>
+    <a class="flex-sm-fill text-sm-center nav-link" routerLink="/bag" >BAG</a>
 
 </nav>
 <!--card of foods-->
 <div *ngIf="food$ | async as foods; else loading">
-    <div class="card mb-3" style="max-width: 540px;"*ngFor="let food of foods">
+    <div class="card mb-3" style="max-width: 540px;"*ngFor="let food of foods| filter: filtered">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="" class="card-img" alt="...">

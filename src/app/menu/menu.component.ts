@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['./menu.component.sass']
 })
 export class MenuComponent implements OnInit {
-  filtered: Food[] = [];
+  filtered:string;
   menu: Food[];
   food$: Observable<Food[]>
   constructor(private menuService : MenuService) { }
@@ -22,10 +22,16 @@ export class MenuComponent implements OnInit {
       console.error(error);
       return empty();
     }));
+    
   }
   
   addToBag(food: Food){
     this.menuService.addToBag(food).subscribe();
     console.log("ok");
   }
+  filter(food:string){
+    this.filtered = food;
+  }
+
+   
 }
