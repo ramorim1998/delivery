@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { BagComponent } from './bag/bag.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { FormsModule }   from '@angular/forms';
+import { FilteredComponent } from './filtered/filtered.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     BagComponent,
+    FilteredComponent,
   ],
   imports: [
     BrowserModule,

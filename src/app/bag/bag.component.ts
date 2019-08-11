@@ -10,11 +10,26 @@ import { Food } from '../menu/models/food';
 })
 export class BagComponent implements OnInit {
   bag$: Observable<Food[]>;
+  bag: Food[];
+  total: number;
+  constructor(private bagService: BagService) {
 
-  constructor(private bagService: BagService) { }
+  }
 
   ngOnInit() {
+    this.total = 0;
     this.bag$ = this.bagService.listAllBag();
+    this.bagService.listAllBag().subscribe(data => this.bag = data);
+    this.setTotal();    
+  }
+  
+
+  setTotal(){
+    for (let i = 0; i < this.bag.length; i++) {
+      this.total += this.bag[i].price;
+      console.log(this.bag[i].price);
+    }
+    console.log(this.total)
   }
 
 }

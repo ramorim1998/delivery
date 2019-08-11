@@ -14,7 +14,7 @@ export class MenuService {
   constructor(private http: HttpClient) { }
 
   listAll(){
-    return this.http.get<Food[]>('http://localhost:3000/food?cuisine = chinese').pipe(delay(2000),tap(console.log));
+    return this.http.get<Food[]>(this.API).pipe(delay(2000),tap(console.log));
   }
 
   addToBag(food: Food){

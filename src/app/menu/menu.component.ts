@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
   }
   filter(food:string){
     this.filtered = food;
-  }
+}
 
    
 }

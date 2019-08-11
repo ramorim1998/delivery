@@ -13,6 +13,6 @@ export class BagService {
   constructor( private http: HttpClient) { }
 
   listAllBag(){
-    return this.http.get<Food[]>(this.APIBAG).pipe(delay(2000));
+    return this.http.get<Food[]>(this.APIBAG).pipe();
   }
 }
