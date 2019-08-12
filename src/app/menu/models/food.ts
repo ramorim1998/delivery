@@ -3,5 +3,5 @@ export class Food {
     title:string;
     price:number;
     cuisine: string;
-    quantity: number;
+    quantity: number = 1;
 }

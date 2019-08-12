@@ -17,10 +17,8 @@ export class BagComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.total = 0;
     this.bag$ = this.bagService.listAllBag();
     this.bagService.listAllBag().subscribe(data => this.bag = data);
-    this.setTotal();    
   }
   
 
@@ -30,6 +28,10 @@ export class BagComponent implements OnInit {
       console.log(this.bag[i].price);
     }
     console.log(this.total)
+  }
+  delete(id){
+    this.bagService.delete(id).subscribe();
+    window.location.reload();
   }
 
 }

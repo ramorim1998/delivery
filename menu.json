@@ -157,18 +157,6 @@
       "title": "Buffalo Chicken Salad",
       "price": 7.5,
       "cuisine": "salad"
-    },
-    {
-      "id": "1f4ff66d-cd4d-4ed6-8006-7fb89acf7d51",
-      "title": "Teriyaki Chicken",
-      "price": 11.95,
-      "cuisine": "chinese"
-    },
-    {
-      "id": "1fdd6457-34f4-4026-adc1-7df19e52777a",
-      "title": "Pepperoni",
-      "price": 13.5,
-      "cuisine": "pizza"
     }
   ]
 }
